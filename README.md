@@ -1,87 +1,21 @@
-Project Title
+# Credit Risk & Default Prediction Model
 
-Built an end-to-end credit risk model for an NBFC using logistic regression with WOE-based feature selection. Implemented rank ordering, KS statistic, Gini coefficient, and deployed via Streamlit.
+## 1. Business Objective
+* **Predict Probability of Default (PD):** Developed a model to assess creditworthiness for an NBFC.
+* **Risk Categorization:** Segmented customers into Poor, Average, Good, and Excellent categories.
+* **Decision Support:** Enabled data-driven loan approvals to support future **Straight Through Processing (STP)**.
 
-2. Business Objective
+## 2. Dataset & Leakage Prevention
+* **Data Sources:** Integrated Loan, Personal, and Bureau datasets.
+* **Data Integrity:** Performed **Train-Test split before merging** to strictly avoid **data leakage**, ensuring the model generalizes well to unseen data.
 
-Explain in 4–5 lines:
+## 3. Feature Engineering 🧮
+* **Key Metrics:** Calculated LTI Ratio, Delinquency Ratio, Avg DPD, and Months Since Last Delinquency.
+* **Feature Selection:** Utilized **Weight of Evidence (WOE)** and **Information Value (IV)** for categorical feature selection, a standard practice in industry scorecard development.
 
-Predict probability of default (PD)
-
-Categorize into Poor / Average / Good / Excellent
-
-Enable data-driven loan approval
-
-Support future Straight Through Processing (STP)
-
-This shows business understanding 🧠
-
-3. Dataset Description
-
-Mention:
-
-Loan data
-
-Personal info data
-
-Bureau data
-
-Train-test split done before merging (to avoid leakage 🔥 good point)
-
-Recruiters LOVE when you mention data leakage prevention.
-
-4. Feature Engineering 🧮
-
-Explain clearly:
-
-Loan-to-Income (LTI) Ratio
-
-Delinquency Ratio
-
-Avg DPD per Delinquency
-
-Credit Utilization
-
-Months Since Last Delinquency
-
-Mention:
-
-WOE & IV used for categorical feature selection.
-
-That sounds very industry-ready.
-
-5. Model Used
-
-Logistic Regression
-
-Why chosen (interpretability)
-
-Suitable for scorecard development
-
-6. Model Evaluation 📊
-
-Add:
-
-KS Statistic
-
-Explain briefly how you calculated using deciles.
-
-Rank Ordering
-
-Explain that higher deciles show higher event rates.
-
-ROC Curve
-
-Add screenshot.
-
-Metrics:
-
-AUC: 0.98
-
-Gini: 0.96
-
-KS: 85.98%
-
-These numbers are very strong. 🔥
-
-
+## 4. Model Evaluation 📊
+* **Algorithm:** Logistic Regression (chosen for high interpretability and scorecard compatibility).
+* **KS Statistic:** **85.98%** (achieved at Decile 2), confirming superior separation between events and non-events.
+* **Rank Ordering:** Validated that higher deciles consistently show higher event rates.
+* **Metrics:** * **AUC:** 0.98
+    * **Gini Coefficient:** 0.96
